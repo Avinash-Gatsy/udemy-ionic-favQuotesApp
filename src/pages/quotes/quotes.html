@@ -20,8 +20,15 @@
       <ion-col text-right>
         <button
         ion-button clear small
+        *ngIf="!isFavQuote(quote)"
         (click)="onAddToFav(quote)">
           Favourite
+        </button>
+        <button
+          ion-button clear small color="danger"
+          *ngIf="isFavQuote(quote)"
+          (click)="onRemoveFrmFav(quote)">
+          Unfavourite
         </button>
       </ion-col>
     </ion-row>

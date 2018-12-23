@@ -15,4 +15,9 @@ export class QuotesService {
   getFavQuotes(){
     return this.favouriteQuotes.slice();
   }
+  isQuoteFav(quote: Quote){
+    return this.favouriteQuotes.find((quoteEl: Quote) => {
+      return quoteEl.id == quote.id;
+    });
+  }
 }

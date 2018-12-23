@@ -49,4 +49,12 @@ export class QuotesPage implements OnInit {
     });
     alert.present();
   }
+
+  onRemoveFrmFav(quote: Quote){
+    this.quotesService.removeQuoteFrmFav(quote);
+  }
+
+  isFavQuote(quote: Quote){
+    return this.quotesService.isQuoteFav(quote);
+  }
 }
