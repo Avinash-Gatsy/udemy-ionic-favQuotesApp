@@ -28,16 +28,20 @@ export class FavouritesPage {
     modal.present();
     modal.onDidDismiss((remove: boolean) => {
       if(remove) {
-        this.quotesService.removeQuoteFrmFav(quote);
-        // once the quotes are modified, re-render the page
-        //this.quotes = this.quotesService.getFavQuotes();
-
-        //or remove the quote from quotes[]
-        const position = this.quotes.findIndex((qouteEl: Quote) => {
-          return qouteEl.id == quote.id;
-        });
-        this.quotes.splice(position, 1);
+        this.onRemoveFrmFav(quote);
       }
     });
+  }
+
+  onRemoveFrmFav(quote: Quote){
+    this.quotesService.removeQuoteFrmFav(quote);
+    // once the quotes are modified, re-render the page
+    //this.quotes = this.quotesService.getFavQuotes();
+
+    //or remove the quote from quotes[]
+    const position = this.quotes.findIndex((qouteEl: Quote) => {
+      return qouteEl.id == quote.id;
+    });
+    this.quotes.splice(position, 1);
   }
 }
