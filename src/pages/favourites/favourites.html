@@ -17,7 +17,7 @@
     <ion-item-sliding
       *ngFor="let quote of quotes">
       <ion-item
-        color="quoteBg"
+        [color]="getBg()"
         (click)="onViewQuote(quote)">
         <h2>{{ quote.person}}</h2>
         <p> {{quote.text}}</p>
